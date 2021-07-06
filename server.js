@@ -37,7 +37,7 @@ app.use(express.static("public"));
 // app.use(express.static(__dirname + '/public'));
 
 
-mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/workout", { useNewUrlParser: true, useUnifiedTopology: true,
+mongoose.connect(process.env.MONGODB_URI ||"mongodb:fixie:ud2KNTq6lWpO3W6@speedway.usefixie.com:1080", { useNewUrlParser: true, useUnifiedTopology: true,
 useCreateIndex: true,
 useFindAndModify: false, });
 
