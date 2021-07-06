@@ -66,7 +66,7 @@ async function start() {
     await scout.install({
       allowShutdown: true, // allow shutting down spawned scout-agent processes from this program
       monitor: true, // enable monitoring
-      name: "",
+      name: "fitnesstracker",
       key: "4TYfmML9MUcMMh7Root0",
     });
   
