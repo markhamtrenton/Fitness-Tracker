@@ -1,4 +1,4 @@
-const scout = require("@scout_apm/scout-apm");
+// const scout = require("@scout_apm/scout-apm");
 const mongoose = require("mongoose");
 const express = require("express");
 const logger = require("morgan");
@@ -37,7 +37,7 @@ app.use(express.static("public"));
 // app.use(express.static(__dirname + '/public'));
 
 
-mongoose.connect(process.env.MONGODB_URI ||"mongodb:fixie:ud2KNTq6lWpO3W6@speedway.usefixie.com:1080", { useNewUrlParser: true, useUnifiedTopology: true,
+mongoose.connect("mongodb+srv://trent:trenton64147@cluster0.awpyb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true,
 useCreateIndex: true,
 useFindAndModify: false, });
 
@@ -61,28 +61,28 @@ app.listen(PORT, () => {
 })
 
 
-async function start() {
-    // Trigger the download and installation of the core-agent
-    await scout.install({
-      allowShutdown: true, // allow shutting down spawned scout-agent processes from this program
-      monitor: true, // enable monitoring
-      name: "fitnesstracker",
-      key: "4TYfmML9MUcMMh7Root0",
-    });
+// async function start() {
+//     // Trigger the download and installation of the core-agent
+//     await scout.install({
+//       allowShutdown: true, // allow shutting down spawned scout-agent processes from this program
+//       monitor: true, // enable monitoring
+//       name: "fitnesstracker",
+//       key: "4TYfmML9MUcMMh7Root0",
+//     });
   
-    // Initialize your express application
-    const app = express();
+//     // Initialize your express application
+//     const app = express();
   
-    // Enable the app-wide scout middleware
-    app.use(scout.expressMiddleware());
+//     // Enable the app-wide scout middleware
+//     app.use(scout.expressMiddleware());
   
-    // Add other middleware and routes
-    // app.use( ... )
-    // app.get( ... )
+//     // Add other middleware and routes
+//     // app.use( ... )
+//     // app.get( ... )
   
-    // Start express
-    app.start();
-  }
+//     // Start express
+//     app.start();
+//   }
   
-  // If this script is executed directly, run the start function
-  if (require.main === module) { start(); } 
+//   // If this script is executed directly, run the start function
+//   if (require.main === module) { start(); } 
